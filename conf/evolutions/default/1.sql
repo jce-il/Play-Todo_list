@@ -7,6 +7,7 @@ create table task (
   id                        bigint not null,
   label                     varchar(255),
   done                      boolean,
+  owner                     varchar(255),
   due_date                  timestamp,
   constraint pk_task primary key (id))
 ;

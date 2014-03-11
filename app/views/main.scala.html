@@ -5,6 +5,10 @@
 <html>
     <head>
         <title>@title</title>
+
+            <!-- Jquery is requierd-->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
 
@@ -16,10 +20,50 @@
 
             <!-- Latest compiled and minified JavaScript -->
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <!-- Jquery is requierd-->
-        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+
+
+
+
+
+
     </head>
     <body>
-        @content
+        <div class="container">
+            <ul class="nav nav-tabs" id="main-Nav">
+                <li class="active"><a href="tasks">Tasks</a></li>
+                <li><a href="dashboard">Dashboard</a></li>
+                <li><a href="#">Messages</a></li>
+            </ul>
+            @content
+        </div>
+
+
+        <!-- this is a script for handling nav bar selected item-->
+        <script  language="javascript" >
+            $(document).ready(function(){
+           // alert( document.URL);
+            var values = (document.URL.split('/'));
+            var value = values[values.length-1];
+
+
+            var links = $('#main-Nav li');
+            links.removeClass('active');
+           // alert(value);
+            var linksMatch = $('#main-Nav li').filter(function() {
+
+            return $(this).text().toUpperCase()  == value.toUpperCase();
+
+            });
+            //alert("1");
+            //alert(linksMatch.length);
+            linksMatch.addClass('active');
+
+            });
+
+
+
+
+
+        </script>
     </body>
 </html>

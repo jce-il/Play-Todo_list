@@ -1,5 +1,6 @@
 package controllers;
 
+
 import play.*;
 import play.mvc.*;
 import play.data.*;
@@ -19,7 +20,7 @@ public class Application extends Controller {
     public static Result tasks() {
         //return TODO;
         return ok(
-                views.html.index.render(Task.all(), taskForm)
+                views.html.index.render(Task.notDone(), taskForm)
         );
     }
 
@@ -40,5 +41,18 @@ public class Application extends Controller {
         return redirect(routes.Application.tasks());
     }
 
+    public static Result markTaskAsDone(Long id) {
+        Task.markAsDone(id);
+        return redirect(routes.Application.tasks());
+    }
 
+    public static Result dashboard() {
+        //return TODO;
+        return ok(views.html.dashboard.render(Task.Done()));
+    }
 }
+
+
+
+
+

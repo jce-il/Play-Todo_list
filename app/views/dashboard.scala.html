@@ -1,0 +1,23 @@
+@(tasks: List[Task])
+
+@import helper._
+
+@main("Dashboard") {
+
+    <div class="container">
+        <h1>@tasks.size completed task(s)</h1>
+
+        <ul>
+        @for(task <- tasks) {
+
+            <li>
+                @task.label
+
+                @form(routes.Application.deleteTask(task.id)) {
+
+                    }
+            </li>
+
+        }
+        </ul>
+}
