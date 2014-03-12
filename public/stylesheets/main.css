@@ -1,0 +1,18 @@
+.btn{
+    display: inline;
+    border-color: orange;
+
+}
+body{background-image:url("../images/templatemo_garden.jpg") }
+.container{
+    background-color: rgba(120, 120, 255, 0.2);
+    height: 100%;
+}
+
+form, form div { display: inline; }
+
+#divNewTask{float:left; margin-right: 50px;}
+
+
+
+#divTasks{padding-top:60px;}

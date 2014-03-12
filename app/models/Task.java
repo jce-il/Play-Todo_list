@@ -83,4 +83,12 @@ public class Task extends Model {
 
     }
 
+    public static void markAsUnDone(Long id) {
+        Task a = find.ref(id);
+        a.done = false;
+        a.save();
+    }
+
+
+
 }

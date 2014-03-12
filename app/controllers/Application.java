@@ -46,6 +46,11 @@ public class Application extends Controller {
         return redirect(routes.Application.tasks());
     }
 
+    public static Result markTaskAsUnDone(Long id) {
+        Task.markAsUnDone(id);
+        return redirect(routes.Application.tasks());
+    }
+
     public static Result dashboard() {
         //return TODO;
         return ok(views.html.dashboard.render(Task.Done()));
