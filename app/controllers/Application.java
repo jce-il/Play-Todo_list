@@ -51,9 +51,14 @@ public class Application extends Controller {
         return redirect(routes.Application.tasks());
     }
 
-    public static Result dashboard() {
+    public static Result completed() {
         //return TODO;
-        return ok(views.html.dashboard.render(Task.Done()));
+        return ok(views.html.completed.render(Task.Done()));
+    }
+
+    public static Result links() {
+        //return TODO;
+        return ok(views.html.links.render());
     }
 }
 

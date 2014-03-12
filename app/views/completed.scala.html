@@ -1,26 +1,37 @@
 @(tasks: List[Task])
 
-@import helper._
+    @import helper._
 
-@main("Completed") {
+    @main("Completed") {
 
-    <div class="container">
-        <h1>@tasks.size completed task(s)</h1>
+        <div class="container-fluid">
+            <h1>@tasks.size completed task(s)</h1>
 
-        <ul>
-        @for(task <- tasks) {
 
-            <li>
-                @task.label
 
-                @form(routes.Application.markTaskAsUnDone(task.id)) {
+            @for(task <- tasks) {
 
-                        <input type="submit" class="btn btn-primary" value="UnDone">
+
+                <div class="row top-buffer">
+
+                    <div class="col-xs-4 ">
+                    @form(routes.Application.markTaskAsUnDone(task.id)) {
+
+                        <input type="submit" class="btn btn-primary btn-xs" value="Mark as undone">
 
                         }
-            </li>
+                    </div>
+                    <div class="col-xs-8">
+                    @task.label
+                    </div>
 
-        }
-        </ul>
-    </div>
-}
+
+
+                </div>
+
+
+            }
+
+
+        </div>
+    }

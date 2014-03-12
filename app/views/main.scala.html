@@ -31,40 +31,72 @@
     </head>
     <body>
         <div class="container">
-            <ul class="nav nav-tabs" id="main-Nav">
-                <li class="active"><a href="tasks">Tasks</a></li>
-                <li><a href="dashboard">Dashboard</a></li>
-                <li><a href="#">Messages</a></li>
-            </ul>
-            @content
+            <div class="row">
+                <div class="col-xs-12"></div>
+                <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-wrapper">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href= "#" class="navbar-brand">Menu</a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse" id="nav-wrapper">
+                        <ul class="nav navbar-nav pull-right" id="main-Nav">
+                            <li class="active"><a href="tasks">Tasks</a></li>
+                            <li><a href="completed">Completed</a></li>
+                            <li><a href="links">Links</a></li>
+                            <li><a href="#">Demo</a></li>
+                            <li><a href="#">Demo1</a></li>
+                            <li><a href="#">Demo2</a></li>
+                            <li><a href="#">Demo3</a></li>
+                            <li><a href="#">Demo4</a></li>
+                            <li><a href="#">Demo5</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="row top-double-buffer">
+                    <div class="col-xs-12">
+                    @content
+                    </div>
+
+                </div>
+            </div>
+
         </div>
 
 
-        <!-- this is a script for handling nav bar selected item-->
+
+
+
+
+            <!-- this is a script for handling nav bar selected item-->
         <script  language="javascript" >
-            $(document).ready(function(){
-           // alert( document.URL);
-            var values = (document.URL.split('/'));
-            var value = values[values.length-1];
+        $(document).ready(function(){
+        // alert( document.URL);
+        var values = (document.URL.split('/'));
+        var value = values[values.length-1];
 
 
-            var links = $('#main-Nav li');
-            links.removeClass('active');
-           // alert(value);
-            var linksMatch = $('#main-Nav li').filter(function() {
+        var links = $('#main-Nav li');
+        links.removeClass('active');
+        // alert(value);
+        var linksMatch = $('#main-Nav li').filter(function() {
 
-            return $(this).text().toUpperCase()  == value.toUpperCase();
+        return $(this).text().toUpperCase()  == value.toUpperCase();
 
-            });
-            //alert("1");
-            //alert(linksMatch.length);
-            linksMatch.addClass('active');
+        });
+        //alert("1");
+        //alert(linksMatch.length);
+        linksMatch.addClass('active');
 
-            });
-
-
-
-
+        });
 
         </script>
     </body>

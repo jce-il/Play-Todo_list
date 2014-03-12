@@ -11,8 +11,15 @@ body{background-image:url("../images/templatemo_garden.jpg") }
 
 form, form div { display: inline; }
 
-#divNewTask{float:left; margin-right: 50px;}
+/*#divNewTask{float:left; margin-right: 50px;}*/
 
 
 
 #divTasks{padding-top:60px;}
+
+.nav  a{color:orange;}
+
+.links  a{color:white;}
+
+.top-buffer { margin-top:20px; }
+.top-double-buffer { margin-top:40px; }

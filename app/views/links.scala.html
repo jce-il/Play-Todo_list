@@ -1,71 +1,18 @@
-@(title: String)(content: Html)
+@import helper._
 
-<!DOCTYPE html>
+@main("links") {
 
-<html>
-    <head>
-        <title>@title</title>
-
-            <!-- Jquery is requierd-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-
-
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-
-            <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-            <!-- Optional theme -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-
-            <!-- Latest compiled and minified JavaScript -->
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+    <div class="container-fluid">
+        <h1>useful Links</h1>
+        <ul class="links">
+            <li> <a href="https://github.com/jce-il/se-class/wiki"> Course site</a>  </li>
+            <li> <a href="https://plus.google.com/u/0/communities/116346534442613449326?cfem=1">Course forum </a>  </li>
+            <li> <a href="https://github.com/jce-il/Play-Todo_list/"> This site on github</a>  </li>
+            <li> <a href="http://getbootstrap.com/components/"> Bootstrap components</a>  </li>
+            <li> <a href="http://getbootstrap.com/getting-started/#examples"> Bootstrap: Getting started</a>  </li>
 
 
 
-
-
-
-    </head>
-    <body>
-        <div class="container">
-            <ul class="nav nav-tabs" id="main-Nav">
-                <li class="active"><a href="tasks">Tasks</a></li>
-                <li><a href="completed">Completed</a></li>
-                <li><a href="links">Links</a></li>
-            </ul>
-            @content
-        </div>
-
-
-        <!-- this is a script for handling nav bar selected item-->
-        <script  language="javascript" >
-            $(document).ready(function(){
-           // alert( document.URL);
-            var values = (document.URL.split('/'));
-            var value = values[values.length-1];
-
-
-            var links = $('#main-Nav li');
-            links.removeClass('active');
-           // alert(value);
-            var linksMatch = $('#main-Nav li').filter(function() {
-
-            return $(this).text().toUpperCase()  == value.toUpperCase();
-
-            });
-            //alert("1");
-            //alert(linksMatch.length);
-            linksMatch.addClass('active');
-
-            });
-
-
-
-
-
-        </script>
-    </body>
-</html>
+        </ul>
+    </div>
+}

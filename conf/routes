@@ -3,17 +3,19 @@
 # ~~~~
 
 # Home page
-GET         /                        controllers.Application.index()
+GET         /                            controllers.Application.index()
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file            controllers.Assets.at(path="/public", file)
+GET         /assets/*file                controllers.Assets.at(path="/public", file)
 
 # Tasks
-GET         /tasks                   controllers.Application.tasks()
-POST        /tasks                   controllers.Application.newTask()
-POST        /tasks/:id/delete        controllers.Application.deleteTask(id: Long)
-POST        /tasks/:id/Done          controllers.Application.markTaskAsDone(id: Long)
-POST        /dashboard/:id/UnDone         controllers.Application.markTaskAsUnDone(id: Long)
+GET         /tasks                       controllers.Application.tasks()
+GET        /completed                   controllers.Application.completed()
+GET         /links                       controllers.Application.links()
 
-#dashboard
-GET         /dashboard               controllers.Application.dashboard()
+POST        /tasks                       controllers.Application.newTask()
+POST        /tasks/:id/delete            controllers.Application.deleteTask(id: Long)
+POST        /tasks/:id/Done              controllers.Application.markTaskAsDone(id: Long)
+POST        /completed/:id/UnDone        controllers.Application.markTaskAsUnDone(id: Long)
+
+
